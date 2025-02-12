@@ -42,9 +42,9 @@ const Login = () => {
     };
 
     return (
-        <div className="auth-container">
-            <h2>Login</h2>
-            {error && <div className="error-message">{error}</div>}
+        <div className="auth-container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: '400px', margin: 'auto', padding: '30px', backgroundColor: '#ffffff', borderRadius: '10px', boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)' }}>
+            <h2 style={{ marginBottom: '20px', color: '#333', fontFamily: 'Arial, sans-serif' }}>Login</h2>
+            {error && <div className="error-message" style={{ color: 'red', marginBottom: '10px', fontSize: '14px' }}>{error}</div>}
             <form onSubmit={handleSubmit}>
                 <input 
                     type="email" 
@@ -53,6 +53,7 @@ const Login = () => {
                     onChange={(e) => setEmail(e.target.value)} 
                     disabled={loading}
                     required 
+                    style={{ width: '100%', padding: '12px', margin: '10px 0', border: '1px solid #007BFF', borderRadius: '5px', fontSize: '16px', transition: 'border-color 0.3s' }}
                 />
                 <input 
                     type="password" 
@@ -61,8 +62,9 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)} 
                     disabled={loading}
                     required 
+                    style={{ width: '100%', padding: '12px', margin: '10px 0', border: '1px solid #007BFF', borderRadius: '5px', fontSize: '16px', transition: 'border-color 0.3s' }}
                 />
-                <button type="submit" disabled={loading}>
+                <button type="submit" disabled={loading} style={{ width: '100%', padding: '12px', backgroundColor: '#007BFF', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', fontSize: '16px', transition: 'background-color 0.3s' }}>
                     {loading ? "Logging in..." : "Login"}
                 </button>
             </form>

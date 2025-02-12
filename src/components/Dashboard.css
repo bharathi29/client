@@ -1,12 +1,13 @@
 .dashboard-wrapper {
+    height: 100vh;  /* Full viewport height */
+    width: 100%;  /* Full width */
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: column;  /* Stack children vertically */
     text-align: center;
     font-family: 'Poppins', sans-serif;
     color: #fff;
-    overflow-x: hidden;
+    overflow: hidden;  /* Prevent scrolling */
     background: linear-gradient(135deg, #89f7fe, #66a6ff);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
@@ -17,7 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    flex: 0 1 auto;  /* Allow the header to grow but not shrink */
+    padding: 10px;  /* Add padding for spacing */
     position: absolute;
     top: 0;
     left: 0;
@@ -47,7 +49,11 @@
 
 .dashboard-container {
     background: white;
-    padding: 30px;
+    flex: 1 1 auto;  /* Allow the container to grow and take remaining space */
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: column;  /* Stack children vertically */
+    justify-content: flex-start;  /* Align items to the top */
+    padding: 10px;  /* Add padding for spacing */
     border-radius: 15px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
     width: 90%;
@@ -99,13 +105,24 @@
     background: linear-gradient(135deg, #66a6ff, #89f7fe);
 }
 
-.button-section {
+.button-container {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: center;  /* Center align buttons */
+    margin-top: 20px;  /* Space above the button container */
 }
 
 .back-button, .proceed-button {
-    padding: 12px 25px;
-    font-size: 1rem
+    margin: 0 10px;  /* Even spacing between buttons */
+    padding: 12px 24px;  /* Standardized padding */
+    font-size: 16px;  /* Consistent font size */
+    border: none;  /* Remove default border */
+    border-radius: 5px;  /* Rounded corners for a modern look */
+    background-color: #007BFF;  /* Button color */
+    color: white;  /* Text color */
+    cursor: pointer;  /* Pointer cursor on hover */
+    transition: background-color 0.3s;  /* Smooth transition for hover effect */
+}
+
+.back-button:hover, .proceed-button:hover {
+    background-color: #0056b3;  /* Darker shade on hover */
 }
